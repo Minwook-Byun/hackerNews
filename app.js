@@ -7,16 +7,12 @@ const CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json'
 function getData(url) {
     ajax.open('GET', url, false);
     ajax.send();
-
     return JSON.parse(ajax.response);
     // 호출하는 주소가 다르다! >> 달라지는 부분은 parameter로 처리. 
 }
 
-
-
 const newsFeed = getData(NEWS_URL);
 const ul = document.createElement('ul');
-
 
 window.addEventListener('hashchange', function(){
     console.log('동작!');
@@ -26,9 +22,7 @@ window.addEventListener('hashchange', function(){
     const title = document.createElement('h1');
     
     title.innerHTML = newsContents.title
-    
     content.appendChild(title);
-    console.log(newsContents);
 });
 
 
